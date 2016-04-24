@@ -72,11 +72,11 @@ ul {
 .card__title:before {
     display: inline-block;
     width: 1em;
-    content: "\25b6";
+    content: "\25B8";
 }
 
 .card__title--is-open:before {
-    content: '\25bc';
+    content: '\25BE';
 }
 
 .checklist__task:first-child {
@@ -88,5 +88,32 @@ ul {
 .checklist__task--remove:after {
     display: inline-block;
     color: #d66;
-    content: "+";
+    content: "\2716";
+}
+
+.checklist--add-task {
+    border: 1px dashed #bbb;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+.toggle-enter {
+    max-height: 0;
+    overflow: hidden;
+}
+.toggle-enter.toggle-enter-active {
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height .25s ease-in;
+}
+.toggle-leave {
+    max-height: 300px;
+    overflow: hidden;
+}
+.toggle-leave.toggle-leave-active {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease-out;
 }
