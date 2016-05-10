@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
-import KanbanBoard from './KanbanBoard.jsx';
+import KanbanBoard from './kanbanboard';
 import {throttle} from './utils';
 
 import 'whatwg-fetch';
@@ -82,7 +82,7 @@ export default class KanbanBoardContainer extends Component {
     }
 
     render() {
-        return <KanbanBoard
+       /* return <KanbanBoard
             cards={ this.state.cards }
             taskCallbacks= {
                 { toggle: this.toggleTask.bind(this),
@@ -92,7 +92,22 @@ export default class KanbanBoardContainer extends Component {
             cardCallbacks= {
                 {   updateStatus: this.updateCardStatus,
                     updatePosition: this.updateCardPosition }
-            }/>
+            }/> */
+
+        let kanbanBoard = this.props.children && React.cloneElement(this.props.children, {
+                cards: this.state.cards,
+                taskCallbacks:{
+                    toggle: this.toggleTask.bind(this),
+                    delete: this.deleteTask.bind(this),
+                    add: this.addTask.bind(this)
+                },
+                cardCallbacks:{
+                    updateStatus: this.updateCardStatus,
+                    updatePosition: this.updateCardPosition
+                }
+            });
+
+        return kanbanBoard;
     }
 
 

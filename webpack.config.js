@@ -15,7 +15,6 @@ process.env.BABEL_ENV = TARGET
 
 module.exports = {
     entry: PATHS.app,
-
     output: {
         path: PATHS.build,
         filename: 'bundle.js'

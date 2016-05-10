@@ -4,9 +4,9 @@ import marked from 'marked';
 
 import { DragSource, DropTarget } from 'react-dnd';
 
-import constants from './../constant.jsx';
+import constants from './../constant';
 
-import CheckList from './CheckList.jsx';
+import CheckList from './checklist';
 
 // Defining a Custom PropType Validator
 // declaring before class
@@ -22,10 +22,12 @@ let titlePropType = (props, propName, componentName) => {
     }
 }
 
-const cardDragSpec = { beginDrag(props) {
-    return {
-        id: props.id
-    }; },
+const cardDragSpec = {
+    beginDrag(props) {
+        return {
+            id: props.id
+        };
+    }
 };
 const cardDropSpec = {
     hover(props, monitor) {
@@ -34,10 +36,12 @@ const cardDropSpec = {
     }
 }
 
-let collectDrag = (connect, monitor) => { return {
-    connectDragSource: connect.dragSource()
-};
+let collectDrag = (connect, monitor) => {
+    return {
+        connectDragSource: connect.dragSource()
+    };
 }
+
 let collectDrop = (connect, monitor) => {
     return {
         connectDropTarget: connect.dropTarget(),
