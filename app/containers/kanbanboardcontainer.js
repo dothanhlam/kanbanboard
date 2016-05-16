@@ -23,6 +23,10 @@ export default class KanbanBoardContainer extends Component {
         this.updateCardStatus = throttle(this.updateCardStatus.bind(this));
         // Call updateCardPosition at max every 500ms (or when arguments change)
         this.updateCardPosition = throttle(this.updateCardPosition.bind(this),500);
+
+        this.toggleTask = this.toggleTask.bind(this);
+        this.deleteTask = this.deleteTask.bind(this);
+        this.addTask = this.addTask.bind(this);
     }
 
     componentDidMount() {
@@ -97,9 +101,9 @@ export default class KanbanBoardContainer extends Component {
         let kanbanBoard = this.props.children && React.cloneElement(this.props.children, {
                 cards: this.state.cards,
                 taskCallbacks:{
-                    toggle: this.toggleTask.bind(this),
-                    delete: this.deleteTask.bind(this),
-                    add: this.addTask.bind(this)
+                    toggle: this.toggleTask,
+                    delete: this.deleteTask,
+                    add: this.addTask
                 },
                 cardCallbacks:{
                     updateStatus: this.updateCardStatus,
