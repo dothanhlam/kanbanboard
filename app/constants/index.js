@@ -1,3 +1,6 @@
+/**
+ * Created by LamDo on 5/11/16.
+ */
 export default {
     CARD: 'card',
 

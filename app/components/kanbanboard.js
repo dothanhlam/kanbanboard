@@ -3,7 +3,7 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 
 import { Link } from 'react-router';
-import List from './components/list';
+import List from './list';
 
 class KanbanBoard extends Component {
 

@@ -4,7 +4,7 @@ import marked from 'marked';
 
 import { DragSource, DropTarget } from 'react-dnd';
 
-import constants from './../constant';
+import constants from './../constants';
 
 import CheckList from './checklist';
 

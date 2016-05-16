@@ -21,8 +21,8 @@ import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 import { Router, Route } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
-import KanbanBoardContainer from './kanbanboardcontainer';
-import KanbanBoard from './kanbanboard';
+import KanbanBoardContainer from './containers/kanbanboardcontainer';
+import KanbanBoard from './components/kanbanboard';
 import EditCard from './components/editcard';
 import NewCard from './components/newcard';
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
-import KanbanBoard from './kanbanboard';
-import {throttle} from './utils';
+import KanbanBoard from '../components/kanbanboard';
+import {throttle} from '../utils';
 
 import 'whatwg-fetch';
 import 'babel-polyfill';
