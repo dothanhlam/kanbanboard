@@ -74,30 +74,9 @@ export default class KanbanBoardContainer extends Component {
         ];
 
         this.setState({cards: cardsList});
-
-        /*   fetch(API_URL + '/cards', {headers: API_HEADERS})
-         .then((response) => response.json())
-         .then((responseData) => {
-         this.setState({cards: responseData});
-         })
-         .catch((error) => {
-         console.log('Error fetching and parsing data', error);
-         }); */
     }
 
     render() {
-       /* return <KanbanBoard
-            cards={ this.state.cards }
-            taskCallbacks= {
-                { toggle: this.toggleTask.bind(this),
-                  delete: this.deleteTask.bind(this),
-                  add: this.addTask.bind(this) }
-            }
-            cardCallbacks= {
-                {   updateStatus: this.updateCardStatus,
-                    updatePosition: this.updateCardPosition }
-            }/> */
-
         let kanbanBoard = this.props.children && React.cloneElement(this.props.children, {
                 cards: this.state.cards,
                 taskCallbacks:{
